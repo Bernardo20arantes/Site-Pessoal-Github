@@ -24,6 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const repos = await response.json();
             const reposContainer = document.getElementById('repos-container');
             repos.forEach(repo => {
+                const stars = repo.stargazers_count !== undefined ? repo.stargazers_count : 'Sem estrelas';
+                const forks = repo.forks_count !== undefined ? repo.forks_count : 'Sem forks';
                 const repoCard = document.createElement('div');
                 repoCard.classList.add('col');
                 repoCard.innerHTML = `
@@ -31,6 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <div class="card-body">
                             <h5 class="card-title">${repo.name}</h5>
                             <p class="card-text">${repo.description || 'Sem descrição'}</p>
+                            <p class="card-text">⭐ ${stars} | 🍴 ${forks}</p>
                             <a href="repo.html?id=${repo.id}" class="btn btn-primary">Ver Repositório</a>
                         </div>
                     </div>
@@ -54,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const indicator = document.createElement('li');
                 indicator.dataset.target = '#carouselExampleIndicators';
                 indicator.dataset.slideTo = index;
-                indicator.classList.add(activeClass);
+                if (index === 0) indicator.classList.add('active');
                 carouselIndicators.appendChild(indicator);
 
                 const item = document.createElement('div');
@@ -95,12 +98,14 @@ document.addEventListener('DOMContentLoaded', () => {
             try {
                 const response = await fetch(`https://api.github.com/repositories/${repoId}`);
                 const repo = await response.json();
+                const stars = repo.stargazers_count !== undefined ? repo.stargazers_count : 'Sem estrelas';
+                const forks = repo.forks_count !== undefined ? repo.forks_count : 'Sem forks';
                 document.getElementById('repo-name').textContent = repo.name;
                 document.getElementById('repo-description').textContent = repo.description || 'Sem descrição';
                 document.getElementById('repo-created').textContent = new Date(repo.created_at).toLocaleDateString('pt-BR');
                 document.getElementById('repo-language').textContent = repo.language || 'Não especificada';
-                document.getElementById('repo-link').href = repo.html_url;
-                document.getElementById('repo-link').textContent = repo.full_name;
+                document.getElementById('repo-stars').textContent = `⭐ ${stars}`;
+                document.getElementById('repo-forks').textContent = `🍴 ${forks}`;
 
                 const topicsContainer = document.getElementById('butoes');
                 (repo.topics || []).forEach(topic => {
