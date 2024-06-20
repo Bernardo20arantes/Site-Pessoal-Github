@@ -1,0 +1,42 @@
+{
+    "conteudos": [
+        {
+            "id": 1,
+            "titulo": "Artigo sobre JavaScript",
+            "descricao": "Um artigo detalhado sobre JavaScript.",
+            "imagemUrl": "https://exemplo.com/img1.jpg",
+            "conteudoUrl": "https://exemplo.com/artigo-js"
+        },
+        {
+            "id": 2,
+            "titulo": "Tutorial de React",
+            "descricao": "Um tutorial completo de React.",
+            "imagemUrl": "https://exemplo.com/img2.jpg",
+            "conteudoUrl": "https://exemplo.com/tutorial-react"
+        }
+    ],
+    "colegas": [
+        {
+            "id": 1,
+            "fotoUrl": "https://exemplo.com/foto1.jpg",
+            "nome": "João Silva",
+            "githubUrl": "https://github.com/joaosilva"
+        },
+        {
+            "id": 2,
+            "fotoUrl": "https://exemplo.com/foto2.jpg",
+            "nome": "Maria Oliveira",
+            "githubUrl": "https://github.com/mariaoliveira"
+        }
+    ],
+    "repositorios": [
+        {
+            "id": 1,
+            "nome": "Meu Repositório",
+            "descricao": "Descrição do repositório",
+            "estrelas": 10,
+            "forks": 5,
+            "url": "https://github.com/seuUsuario/meu-repositorio"
+        }
+    ]
+}

@@ -11,7 +11,8 @@ header {
     align-items: center;
     justify-content: space-between;
 }
-header a{
+
+header a {
     color: #6CB4EE;
 }
 
@@ -27,10 +28,12 @@ header a{
     border: solid 1px;
     margin-bottom: 40px;
 }
-.info p{
+
+.info p {
     text-align: justify;
     width: 100%;
 }
+
 #icons img {
     width: 40px;
     margin-bottom: 10px;
@@ -48,53 +51,75 @@ header a{
 #imgMe {
     margin-left: 20px;
     border: solid 2px;
+    max-width: 100%;
+    height: auto;
 }
 
-#pessoa{
+#pessoa {
     margin-top: 40px;
     width: 100%;
 }
-#comPessoas{
+
+#comPessoas {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     width: 100%;
 }
+
 #comPessoas img {
     width: 200px;
+    max-width: 100%;
+    height: auto;
 }
 
 #site {
     display: flex;
     width: 284px;
 }
-.pessoasEquipe{
+
+.pessoasEquipe {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-#repositorio{
+
+#repositorio {
     text-align: justify;
     display: flex;
     flex-direction: column;
     gap: 10px;
     margin-bottom: 10px;
 }
-#repositorio h5{
+
+#repositorio h5 {
     color: rgb(71, 156, 206);
 }
-#butoes{
+
+#butoes {
     display: flex;
     flex-direction: row;
     gap: 10px;
     margin-bottom: 20px;
 }
+
+.card-img-top {
+    max-width: 100%;
+    height: auto;
+}
+
+.carousel-inner img {
+    max-width: 100%;
+    height: auto;
+}
+
 @media (max-width: 600px) {
-    header{
+    header {
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
     }
+
     #container {
         flex-direction: column;
     }
@@ -108,17 +133,21 @@ header a{
         flex-direction: row;
         justify-content: center;
     }
-    #site{
+
+    #site {
         flex-direction: column;
     }
+
     #icons img {
         margin: 0 5px;
     }
-    #comPessoas{
+
+    #comPessoas {
         flex-direction: column;
         align-items: center;
     }
-    #butoes{
+
+    #butoes {
         display: flex;
         gap: 10px;
         margin-bottom: 20px;
